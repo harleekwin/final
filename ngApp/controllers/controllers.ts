@@ -2,6 +2,7 @@ namespace app.Controllers {
 
   export class HomeController {
       public file;
+      public productToSave;
 
       public pickFile() {
           this.filepickerService.pick(
@@ -13,6 +14,7 @@ namespace app.Controllers {
       public fileUploaded(file) {
           // save file url to database
           this.file = file;
+          this.productToSave.url = this.file.url;
           this.$scope.$apply(); // force page to update
       }
 
